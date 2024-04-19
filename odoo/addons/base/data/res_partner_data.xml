@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="True">
+    <data noupdate="1">
         <record id="main_partner" model="res.partner" context="{'default_is_company': True}">
             <field name="name">My Company</field>
-            <field name="company_id" eval="None"/>
-            <field name="is_company" eval="True"/>
+            <field name="company_id"></field>
+            <field name="is_company">True</field>
             <field name="street"></field>
             <field name="city"></field>
             <field name="zip"></field>
@@ -14,20 +14,20 @@
 
         <record model="res.partner" id="base.partner_root">
             <field name="name">System</field>
-            <field name="company_id" ref="main_company"/>
+            <field name="company_id" ref="main_company"></field>
             <field name="email">odoobot@example.com</field>
-            <field name="active" eval="False"/>
+            <field name="active">False</field>
         </record>
 
         <record model="res.partner" id="base.partner_admin">
             <field name="name">Administrator</field>
-            <field name="company_id" ref="main_company"/>
-            <field name="email">admin@example.com</field>
+            <field name="company_id" ref="main_company"></field>
+            <field name="email"> admin@example.com</field>
         </record>
 
         <record id="public_partner" model="res.partner">
             <field name="name">Public user</field>
-            <field name="active" eval="False"/>
+            <field name="active">False</field>
         </record>
 
         <!--

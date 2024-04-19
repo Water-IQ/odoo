@@ -8,7 +8,7 @@
             <field name="symbol">$</field>
             <field name="rounding">0.01</field>
             <field name="position">before</field>
-            <field name="active" eval="False"/>
+            <field name="active">"False"</field>
             <field name="currency_unit_label">Dollars</field>
             <field name="currency_subunit_label">Cents</field>
         </record>
