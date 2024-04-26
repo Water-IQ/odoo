@@ -3,7 +3,6 @@
 import { hasTouch, isIosApp, isMacOS } from "@web/core/browser/feature_detection";
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { useService } from "@web/core/utils/hooks";
-import { ExpirationPanel } from "./expiration_panel";
 import { useSortable } from "@web/core/utils/sortable_owl";
 import { reorderApps } from "@web/webclient/menus/menu_helpers";
 
@@ -54,7 +53,6 @@ export class HomeMenu extends Component {
         this.menus = useService("menu");
         this.user = useService("user");
         this.homeMenuService = useService("home_menu");
-        this.subscription = useState(useService("enterprise_subscription"));
         this.ui = useService("ui");
         this.state = useState({
             focusedIndex: null,
@@ -337,7 +335,6 @@ export class HomeMenu extends Component {
         this.compositionStart = true;
     }
 }
-HomeMenu.components = { ExpirationPanel };
 HomeMenu.props = {
     apps: {
         type: Array,
