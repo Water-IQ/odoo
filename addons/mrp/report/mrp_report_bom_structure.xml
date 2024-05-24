@@ -7,7 +7,8 @@
                     <h1>BoM Overview</h1>
                     <h3 t-esc="data['name']"/>
                     <hr t-if="data['bom_code']"/>
-                    <h6 t-if="data['bom_code']">Reference: <t t-esc="data['bom_code']"/></h6>
+                    <h6 t-if="data['bom_code']">Reference: <t t-esc="data['bom_code']"/>
+                    </h6>
                 </div>
                 <t t-set="currency" t-value="data['currency']"/>
                 <table class="o_mrp_bom_expandable table table-borderless">
@@ -32,7 +33,8 @@
                             <td class="text-start" groups="uom.group_uom" t-esc="data['uom_name']"/>
                             <td t-if="data['show_availabilities']" class="text-end" t-esc="data['producible_qty']" t-options="{'widget': 'float', 'precision': 0}"/>
                             <td t-if="data['show_availabilities']" class="text-end">
-                                <t t-esc="data['quantity_available']" t-options='{"widget": "float", "decimal_precision": "Product Unit of Measure"}'/> /
+                                <t t-esc="data['quantity_available']" t-options='{"widget": "float", "decimal_precision": "Product Unit of Measure"}'/>
+ /
                                 <t t-esc="data['quantity_on_hand']" t-options='{"widget": "float", "decimal_precision": "Product Unit of Measure"}'/>
                             </td>
                             <td t-if="data['show_availabilities']" class="text-center">
@@ -47,7 +49,9 @@
                                 </span>
                             </td>
                             <td>
-                                <span t-if="data['route_name']"><t t-esc="data['route_name']"/>: </span>
+                                <span t-if="data['route_name']">
+                                    <t t-esc="data['route_name']"/>
+: </span>
                                 <span t-esc="data['route_detail']"/>
                             </td>
                             <td t-if="data['show_costs']" class="text-end" t-esc="data['bom_cost']" t-options='{"widget": "monetary", "display_currency": currency}'/>
@@ -60,7 +64,9 @@
                             <td name="td_mrp_bom_f" class="text-end">
                                 <span t-if="data['byproducts']" t-esc="data['name']"/>
                             </td>
-                            <td class="text-end"><strong>Unit Cost</strong></td>
+                            <td class="text-end">
+                                <strong>Unit Cost</strong>
+                            </td>
                             <td class="text-start" groups="uom.group_uom" t-esc="data['uom_name']"/>
                             <td t-if="data['show_availabilities']"/>
                             <td t-if="data['show_availabilities']"/>
@@ -73,7 +79,9 @@
                         <t t-if="data['show_costs'] and data['byproducts']" t-foreach="data['byproducts']" t-as="byproduct">
                             <tr>
                                 <td name="td_mrp_bom_byproducts_f" class="text-end" t-esc="byproduct['name']"/>
-                                <td class="text-end"><strong>Unit Cost</strong></td>
+                                <td class="text-end">
+                                    <strong>Unit Cost</strong>
+                                </td>
                                 <td class="text-start" groups="uom.group_uom" t-esc="byproduct['uom_name']"/>
                                 <td t-if="data['show_availabilities']"/>
                                 <td t-if="data['show_availabilities']"/>
@@ -113,7 +121,8 @@
                 </td>
                 <td t-if="data['show_availabilities']" class="text-end">
                     <t t-if="l.get('quantity_available', False) is not False">
-                        <t t-esc="l['quantity_available']" t-options='{"widget": "float", "decimal_precision": "Product Unit of Measure"}'/> /
+                        <t t-esc="l['quantity_available']" t-options='{"widget": "float", "decimal_precision": "Product Unit of Measure"}'/>
+ /
                         <t t-esc="l['quantity_on_hand']" t-options='{"widget": "float", "decimal_precision": "Product Unit of Measure"}'/>
                     </t>
                 </td>
@@ -129,7 +138,10 @@
                     </span>
                 </td>
                 <td>
-                    <span t-if="l.get('route_name')"><t t-esc="l['route_name']"/>: <t t-esc="l['route_detail']"/></span>
+                    <span t-if="l.get('route_name')">
+                        <t t-esc="l['route_name']"/>
+:                        <t t-esc="l['route_detail']"/>
+                    </span>
                 </td>
                 <td t-if="data['show_costs']" t-attf-class="text-end {{ 'text-muted' if l['type'] == 'component' else '' }}" t-esc="l['bom_cost']" t-options='{"widget": "monetary", "display_currency": currency}'/>
                 <td t-if="data['show_costs']" class="text-end">
@@ -145,7 +157,7 @@
                 <div class="page">
                     <t t-call="mrp.report_mrp_bom"/>
                 </div>
-                <p style="page-break-before:always;"> </p>
+                <p style="page-break-before:always;"></p>
             </t>
         </t>
     </template>

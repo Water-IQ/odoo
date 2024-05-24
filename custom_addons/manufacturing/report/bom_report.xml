@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <!-- BoM Overview Report -->
+        <template id="report_mrp_bom_inherit" inherit_id="mrp.report_mrp_bom">
+            <!-- Display barcode at top with product -->
+            <xpath expr="//h3[1]" position="after">
+                <h5 t-esc="data['barcode']"/>
+            </xpath>
+            <!-- display Barcode on header -->
+            <xpath expr="//table[@class='o_mrp_bom_expandable table table-borderless']/thead/tr/th[1]" position="after">
+                <th>Barcode</th>
+            </xpath>
+            <!-- Add Barcode to the body -->
+            <xpath expr="//table[@class='o_mrp_bom_expandable table table-borderless']/tbody/tr/td[1]" position="after">
+                <td t-esc="data['barcode'] or ''"/>
+            </xpath>
+        </template>
+
+        <!-- BoM PDF Report -->
+        <!-- adding barcode to the bom pdf lines -->
+        <template id="report_mrp_bom_pdf_line_inherit" inherit_id="mrp.report_mrp_bom_pdf_line">
+
+            <xpath expr="//t[2]" position="after">
+                <t t-foreach="data['lines']" t-as="l"></t>
+
+            </xpath>
+            <xpath expr="//tr/td[1]" position="after">
+                <td t-esc="l.get('barcode', 'No Barcode')"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
