@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+
+
+
+    <record id="barcode_sequence_id" model="ir.sequence">
+      <field name="name">Barcode Sequence</field>
+      <field name="code">barcode.sequence.code</field>
+      <field name="active">True</field>
+      <field name="prefix"></field>
+      <field name="padding">0</field>
+      <field name="number_next">1100</field>
+      <field name="number_increment">1</field>
+    </record>
+
+    
+  </data>
+</odoo>
