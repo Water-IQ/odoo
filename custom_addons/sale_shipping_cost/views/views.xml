@@ -9,7 +9,13 @@
         <!-- Add the custom field to the totals section in the sale order form -->
         <xpath expr="//sheet/group/group" position="inside">
 
+          <field name="order_no"/>
+
           <field name="sale_shipping_cost" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+
+          <field name="closed_date"/>
+
+          <field name="tracking_no" widget="url"/>
 
         </xpath>
       </field>

@@ -28,13 +28,15 @@
 }
 
 .o_home_menu {
-    font-size: $font-size-base;
+    // font-size: $font-size-base;
+    font-size: 15px;
 
     .container {
         @include media-breakpoint-up(md) {
             max-width: $o-home-menu-container-size !important;
         }
     }
+
 
     .o_app {
         .o_app_icon {

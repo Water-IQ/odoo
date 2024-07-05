@@ -49,6 +49,7 @@ export class Dropdown extends Component {
             directionCaretClass: null,
         });
         this.rootRef = useRef("root");
+        
 
         // Set up beforeOpen ---------------------------------------------------
         onWillStart(() => {
@@ -293,9 +294,12 @@ export class Dropdown extends Component {
      * Toggles the dropdown on its toggler click.
      */
     onTogglerClick() {
-        this.toggle();
+        setTimeout(() => {
+            this.toggle();
+        }, 200);
+        
     }
-
+    
     /**
      * Opens the dropdown when the mouse enters its toggler if its group is open. (see autoOpen prop)
      * NB: only if its siblings dropdown group is opened and if not a sub dropdown.

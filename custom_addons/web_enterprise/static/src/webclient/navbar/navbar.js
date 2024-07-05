@@ -14,6 +14,8 @@ export class EnterpriseNavBar extends NavBar {
         this._busToggledCallback = () => this._updateMenuAppsIcon();
         useBus(this.env.bus, "HOME-MENU:TOGGLED", this._busToggledCallback);
         useEffect(() => this._updateMenuAppsIcon());
+
+    
     }
     get hasBackgroundAction() {
         return this.hm.hasBackgroundAction;
@@ -48,5 +50,6 @@ export class EnterpriseNavBar extends NavBar {
             appSubMenus.classList.toggle("o_hidden", !this.isInApp);
         }
     }
+    
 }
 EnterpriseNavBar.template = "web_enterprise.EnterpriseNavBar";

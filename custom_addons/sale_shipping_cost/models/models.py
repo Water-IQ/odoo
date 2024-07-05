@@ -7,8 +7,13 @@ class SaleShippingCost(models.Model):
     _inherit = "sale.order"
 
     sale_shipping_cost = fields.Monetary(
-        string="Shipping Cost", currency_field="currency_id"
+        string="Shipping Cost", currency_field="currency_id", stored=True
     )
+    ship_date = fields.Datetime(string="Ship Date", stored=True)
+    closed_date = fields.Datetime(string="Closed Date", stored=True)
+    order_no = fields.Char(string="Order Number", stored=True)
+    serial_no = fields.Html(string="Serial Numbers", stored=True)
+    tracking_no = fields.Char(string="Tracking Number", stored=True)
 
     @api.depends("order_line.price_total", "sale_shipping_cost")
     def _amount_all(self):
@@ -39,7 +44,7 @@ class SaleShippingCost(models.Model):
         return invoice_vals
 
     """
-        In Odoo, the notation (0, 0, {...}) is used within the context of a one2many or many2many field to indicate that a new record should be created with the specified values.
+        (0, 0, {...}) is used within the context of a one2many or many2many field to indicate that a new record should be created with the specified values.
         0: Indicates that this is an operation type for creating a new record.
         0: The second 0 is a placeholder for the ID of the record being created, which is 0 because the record does not yet exist.
     """

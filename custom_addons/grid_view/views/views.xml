@@ -1,0 +1,84 @@
+<odoo>
+  <data>
+
+
+    <record id="custom_view_grid" model="ir.ui.view">
+      <field name="name">Custom Grid View</field>
+      <field name="model">view</field>
+      <field name="arch" type="xml">
+        <grid string="My Grid View">
+          <!-- Add your columns here -->
+        </grid>
+      </field>
+    </record>
+
+    <record id="custom_view_action" model="ir.actions.act_window">
+      <field name="name">custom.actions.act_window</field>
+      <field name="res_model">view</field>
+      <field name="view_mode">grid,form,kanban,tree</field>
+    </record>
+
+    <record id="record_id_view_grid" model="ir.actions.act_window.view">
+      <field name="sequence" eval="1"/>
+      <field name="view_mode">grid</field>
+      <field name="view_id" ref="custom_view_grid"/>
+      <field name="act_window_id" ref="custom_view_action"/>
+    </record>
+
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="custom_views.list">
+      <field name="name">custom_views list</field>
+      <field name="model">custom_views.custom_views</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="custom_views.action_window">
+      <field name="name">custom_views window</field>
+      <field name="res_model">custom_views.custom_views</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="custom_views.action_server">
+      <field name="name">custom_views server</field>
+      <field name="model_id" ref="model_custom_views_custom_views"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="custom_views" id="custom_views.menu_root"/>
+-->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="custom_views.menu_1" parent="custom_views.menu_root"/>
+    <menuitem name="Menu 2" id="custom_views.menu_2" parent="custom_views.menu_root"/>
+-->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="custom_views.menu_1_list" parent="custom_views.menu_1" action="custom_views.action_window"/>
+    <menuitem name="Server to list" id="custom_views" parent="custom_views.menu_2" action="custom_views.action_server"/>
+-->
+  </data>
+</odoo>

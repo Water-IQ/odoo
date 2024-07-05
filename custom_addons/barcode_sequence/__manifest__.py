@@ -10,9 +10,12 @@
     "category": "Custom",
     "version": "1.0",
     # any module necessary for this one to work correctly
-    "depends": ["base", "web"],
+    "depends": ["base", "web", "stock", "product"],
     # always loaded
     "data": [
         "views/views.xml",
     ],
+    "installable": True,
+    "application": False,
+    "auto_install": True,
 }

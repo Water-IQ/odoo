@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class barcode_sequence(models.Model):
-    _inherit = "product.product"
+    _inherit = "product.template"
 
     barcode = fields.Char(string="Barcode", store=True, default="/")
 

@@ -1,0 +1,7 @@
+<templates xml:space="preserve">
+    <t t-name="grid_view.GridRenderer" owl="1">
+        <div>
+            <h1>New Grid View</h1>
+        </div>
+    </t>
+</templates>

@@ -25,7 +25,7 @@
 
     <t t-name="web_enterprise.EnterpriseNavBar.SectionsMenu" t-inherit="web.NavBar.SectionsMenu" t-inherit-mode="extension">
         <xpath expr="//MenuDropdown" position="attributes">
-            <attribute name="togglerClass" add="'fw-normal'"/>
+            <attribute name="togglerClass" add="'fw-normal'" />
         </xpath>
 
     </t>
