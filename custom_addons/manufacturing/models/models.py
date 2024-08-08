@@ -10,6 +10,7 @@ class BoMs(models.Model):
     barcode = fields.Char(
         related="product_tmpl_id.barcode", string="Barcode", store=True
     )
+    sku = fields.Char(related="product_tmpl_id.x_studio_sku", string="SKU", store=True)
 
     @api.depends("bom_line_ids.product_qty", "bom_line_ids.product_id.standard_price")
     def _compute_bom_cost(self):
@@ -23,3 +24,4 @@ class BoMLines(models.Model):
     _inherit = "mrp.bom.line"
 
     barcode = fields.Char(related="product_tmpl_id.barcode", string="Barcode", store=True)
+    sku = fields.Char(related="product_tmpl_id.x_studio_sku", string="SKU", store=True)

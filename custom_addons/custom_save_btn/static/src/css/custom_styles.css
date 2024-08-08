@@ -1,0 +1,73 @@
+
+
+.o_form_button_save .fa-cloud-upload {
+    display: none;
+}
+.o_form_button_save::before {
+    content: 'Save';
+    display: inline-block;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    background-color: #0051a8;
+    border-radius: 5px;
+}
+
+.o_form_button_cancel .fa-undo {
+    display: none;
+}
+.o_form_button_cancel::before {
+    content: 'Cancel';
+    display: inline-block;
+    font-size: 14px;
+    color: #374151;
+    padding: 5px 10px;
+    background-color: #e7e9ed;
+    border-radius: 5px;
+}
+
+.o_main_navbar .o_menu_toggle,
+.o_main_navbar .o_menu_brand,
+.o_main_navbar .o_navbar_apps_menu .dropdown-toggle,
+.o_main_navbar .o_nav_entry,
+.o_main_navbar .dropdown-toggle {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: calc(var(--o-navbar-height) - 20px);
+    border-radius: 0.25rem;
+    user-select: none;
+    background: transparent;
+    font-size: 20px;
+}
+
+.dropdown-menu {
+    font-size: 18px; 
+}
+
+.o_app_icon {
+    max-width: 80px !important;
+}
+
+.o_caption {
+    font-size: 18px;
+}
+
+.fa-comments {
+    color: #278fff;
+}
+
+
+
+
+
+
+/* .fa-cloud-upload {
+
+}
+.fa-undo {
+   
+} */

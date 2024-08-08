@@ -1,0 +1,21 @@
+
+
+<odoo>
+    <data>
+        <record id="sample_request_status_email" model="mail.template">
+            <field name="name">Algae Sample Request Status</field>
+            <field name="model_id" ref="x_algae_sample_request"/>
+            <field name="email_from">${(object.user_id.email or 'noreply@example.com')|safe}</field>
+            <field name="email_to">${(object.user_id.email)|safe}</field>
+            <field name="subject">Your Algae Sample Request Status has been Updated</field>
+            <field name="body_html">
+                <![CDATA[
+                <p>Hello ${object.user_id.name},</p>
+                <p>Your request has been updated to status: ${object.status}.</p>
+                <br>
+                <p>Thank you.</p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

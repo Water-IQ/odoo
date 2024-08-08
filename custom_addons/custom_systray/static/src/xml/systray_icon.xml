@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="systray_icon" owl="1">
+        
+        <Dropdown>
+            <t t-set-slot="toggler">
+            <div class="new_icon">
+                <div class="icon_div">
+                    <div class="toggle-icon" role="button">
+                        <i id='settings_icon' class="fa fa-gear fa-lg" style="color: red;" role="img" aria-label="Settings"/>
+                    </div>
+                </div>
+            </div>
+                
+            </t>
+            <t t-set-slot="default">
+                <DropdownItem >
+                    <div t-on-click="_openGeneral">
+                        General
+                    </div>
+                </DropdownItem>
+                <DropdownItem>
+                    <div t-on-click="_openServerActions">
+                        Server Actions
+                    </div>
+                </DropdownItem>
+                <DropdownItem>
+                    <div t-on-click="_openViews">
+                        Views
+                    </div>
+                </DropdownItem>
+                <DropdownItem>
+                    <div t-on-click="_openViews">
+                        Models
+                    </div>
+                </DropdownItem>
+                <DropdownItem>
+                    <div t-on-click="_openAutomationRules">
+                        Automation Rules
+                    </div>
+                </DropdownItem>
+                <DropdownItem>
+                    <div t-on-click="_openUsers">
+                        Users
+                    </div>
+                </DropdownItem>
+                
+            </t>
+        </Dropdown>
+    </t>
+</templates>
