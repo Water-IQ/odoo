@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Inherit the BOM Overview Table template -->
+    <t t-name="manufacturing.BomOverviewTable" t-inherit="mrp.BomOverviewTable" t-inherit-mode="extension">
+        <xpath expr="//div[@class='me-auto']/h2" position="after">
+            <h4 t-esc="data.sku"/>
+        </xpath>
+        <xpath expr="//th[@name='th_mrp_bom_h']" position="after">
+            <th>Barcode</th>
+        </xpath>
+        
+    </t>
+</templates>
+

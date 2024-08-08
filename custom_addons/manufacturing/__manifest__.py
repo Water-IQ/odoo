@@ -13,15 +13,18 @@ Long description of module's purpose
     "category": "Manufacturing",
     "version": "0.1",
     # any module necessary for this one to work correctly
-    "depends": ["base", "mrp", "stock", "product"],
+    "depends": ["base", "mrp", "stock", "product", "web"],
     # always loaded
     "data": [
-        # 'security/ir.model.access.csv',
         "views/views.xml",
         "report/bom_report.xml",
     ],
-    
+    "assets": {
+        "web.assets_backend": [
+            "manufacturing/static/src/xml/bom_overview_table_inherit.xml",
+            "manufacturing/static/src/xml/bom_overview_line_inherit.xml",
+        ],
+    },
     "installable": True,
     "application": False,
-    "auto_install": True,
 }

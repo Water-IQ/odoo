@@ -163,6 +163,7 @@ class ReportBomStructure(models.AbstractModel):
             warehouse = self.env["stock.warehouse"].browse(
                 self.get_warehouses()[0]["id"]
             )
+        sku = bom.product_tmpl_id.x_studio_sku
         barcode = bom.product_tmpl_id.barcode
         lines = self._get_bom_data(
             bom, warehouse, product=product, line_qty=bom_quantity, level=0
@@ -393,6 +394,7 @@ class ReportBomStructure(models.AbstractModel):
                 bom_line.product_qty if bom_line else False
             ),  # bom_line isn't defined only for the top-level product
             "name": product.display_name or bom.product_tmpl_id.display_name,
+            "sku": bom.product_tmpl_id.x_studio_sku,
             "barcode": bom.product_tmpl_id.barcode,
             "uom": bom.product_uom_id if bom else product.uom_id,
             "uom_name": bom.product_uom_id.name if bom else product.uom_id.name,
